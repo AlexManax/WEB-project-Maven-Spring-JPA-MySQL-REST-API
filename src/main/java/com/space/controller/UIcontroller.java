@@ -77,7 +77,8 @@ public class UIcontroller {
 //                minSpeed, maxSpeed, minCrewSize, maxCrewSize, minRating, maxRating) + " ORDER BY " + order +
 //                " LIMIT " + pSize + " OFFSET " + Integer.parseInt(pNum) * Integer.parseInt(pSize));
 
-        return dbConnection.getShipsFromDB(getQueryStatement(pNum, pSize, order, shipName, planet, shipType, dateAfter, dateBefore, isUsed,
+        return dbConnection.getShipsFromDB(//"SELECT * FROM ship  WHERE prodDate >= '2995-01-01' AND prodDate <= '3008-12-31' AND crewSize >= '20' AND crewSize <= '1500' ORDER BY id LIMIT 3 OFFSET 3");
+                getQueryStatement(pNum, pSize, order, shipName, planet, shipType, dateAfter, dateBefore, isUsed,
                 minSpeed, maxSpeed, minCrewSize, maxCrewSize, minRating, maxRating) + " ORDER BY " + order +
                 " LIMIT " + pSize + " OFFSET " + Integer.parseInt(pNum) * Integer.parseInt(pSize));
 

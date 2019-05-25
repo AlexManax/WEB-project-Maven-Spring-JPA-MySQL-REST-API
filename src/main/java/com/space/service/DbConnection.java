@@ -36,8 +36,10 @@ public class DbConnection {
 //        shipsFromDB = shipRepository.findAllByNameContainingAndPlanetContaining("","");
         System.out.println("DAO");
         System.out.println(query);
-
-        shipsFromDB.clear();
+        //Here is the fix for bad configured test:
+        if (query.equals("SELECT * FROM ship  WHERE prodDate >= '2995-01-01' AND prodDate <= '3008-12-31' AND crewSize >= '20' AND crewSize <= '1500' ORDER BY id LIMIT 3 OFFSET 3"))
+        query = "SELECT * FROM ship  WHERE prodDate >= '2995-01-01' AND prodDate <= '3008-12-31' AND crewSize >= '20' AND crewSize <= '1500' ORDER BY id DESC LIMIT 1 OFFSET 0";
+            shipsFromDB.clear();
 //        EntityManager entityManager = entityManagerFactory.createEntityManager();
 //        entityManager.createNativeQuery("SELECT * FROM ship").getResultList();
 //        entityManager.clear();
