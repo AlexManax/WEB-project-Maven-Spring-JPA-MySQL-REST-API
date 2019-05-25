@@ -75,7 +75,6 @@ public class GetShipTest {
         String contentAsString = resultActions.andReturn().getResponse().getContentAsString();
         ObjectMapper mapper = new ObjectMapper();
         ShipInfoTest actual = mapper.readValue(contentAsString, ShipInfoTest.class);
-        System.out.println(expected.id);
         assertTrue("Вернулся неправильный объект при запросе GET /rest/ships/{id}", actual.equals(expected));
     }
 

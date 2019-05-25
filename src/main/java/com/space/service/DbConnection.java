@@ -62,11 +62,8 @@ public class DbConnection {
 
             while (rs.next()) {
 
-                shipsFromDB.add(new Ship(rs.getLong("id"), rs.getString("name"), rs.getString("planet"),
-                        ShipType.valueOf(rs.getString("shipType")), rs.getDate("prodDate"), rs.getBoolean("isUsed"),
-                        rs.getDouble("speed"), rs.getInt("crewSize"), rs.getDouble("rating")
-
-                ));
+                shipsFromDB.add(getByID(rs.getLong("id"))
+                );
 
             }
 

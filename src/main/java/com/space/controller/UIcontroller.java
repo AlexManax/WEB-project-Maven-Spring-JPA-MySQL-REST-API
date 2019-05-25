@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import sun.jvm.hotspot.oops.java_lang_Class;
+
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -43,6 +43,7 @@ public class UIcontroller {
 //    return dbConnection.getShipsFromDB("");
 //}
 
+
     @RequestMapping(value = "/ships", method = RequestMethod.GET)
     public @ResponseBody
     List<Ship> getAllShips(@RequestParam(value = "pageNumber", required = false) String pNum,
@@ -62,13 +63,15 @@ public class UIcontroller {
                            @RequestParam(value = "maxRating", required = false) String maxRating
     ) {
 
-        if (order == null) {
-            order = "id";
-            pSize = "3";
-            pNum = "0";
-        }
+        if (order == null)   order = "id";
+        if (pSize == null)   pSize = "3";
+        if (pNum == null)    pNum = "0";
+
         if (order.equals("DATE")) order = "prodDate";
 
+//        System.out.println(new Date(32840668329670L));
+//        System.out.println("time :");
+//        System.out.println(dbConnection.getByID(14L).getProdDate());
 
 //        System.out.println(getQueryStatement(pNum, pSize, order, shipName, planet, shipType, dateAfter, dateBefore, isUsed,
 //                minSpeed, maxSpeed, minCrewSize, maxCrewSize, minRating, maxRating) + " ORDER BY " + order +
@@ -112,6 +115,8 @@ public class UIcontroller {
         System.out.println(pNum + " " + pSize + " " + order);
         System.out.println(shipName + " " + planet + " " + shipType + " " + dateAfter + " " + dateBefore + " " + isUsed + " " + minSpeed + " "
                 + maxSpeed + " " + minCrewSize + " " + maxCrewSize + " " + minRating + " " + maxRating);
+
+
 
         return dbConnection.getShipsFromDB(getQueryStatement(pNum, pSize, order, shipName, planet, shipType, dateAfter, dateBefore, isUsed,
                 minSpeed, maxSpeed, minCrewSize, maxCrewSize, minRating, maxRating)).size();
@@ -235,8 +240,8 @@ public class UIcontroller {
 
         if (!(ship.getProdDate()==null)) {
             assert ship.getProdDate() != null;
-            if (    !ship.getProdDate().before(new Date(2800, Calendar.JANUARY, 1))
-                    || ship.getProdDate().after(new Date(3019, Calendar.DECEMBER, 31))
+            if (       Integer.parseInt(new SimpleDateFormat("yyyy").format(ship.getProdDate()))<2800
+                    || Integer.parseInt(new SimpleDateFormat("yyyy").format(ship.getProdDate()))>3019
             ) {
                 System.out.println(ship.getProdDate());
                 System.out.println("Bad Date!");

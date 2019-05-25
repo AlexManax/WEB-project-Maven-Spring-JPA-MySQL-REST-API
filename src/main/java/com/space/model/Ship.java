@@ -38,7 +38,8 @@ public class Ship {
     }
 
     public Double generateRating () {
-        return new BigDecimal((80 * speed * (isUsed ? 0.5 : 1)) / (3019 - Integer.parseInt(new SimpleDateFormat("yyyy").format(prodDate)) + 1)).setScale(2, RoundingMode.DOWN).doubleValue();
+        return new BigDecimal((80 * speed * (isUsed ? 0.5 : 1)) /
+                (3019 - Integer.parseInt(new SimpleDateFormat("yyyy").format(prodDate)) + 1)).setScale(2, RoundingMode.HALF_UP).doubleValue();
 
 //        return rating = (80 * speed* ( isUsed ? 1 : 0.5))/
 //                (3019 - Integer.parseInt(new SimpleDateFormat("yyyy").format(prodDate)) + 1 );

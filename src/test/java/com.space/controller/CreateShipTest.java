@@ -133,8 +133,7 @@ public class CreateShipTest {
                 .andExpect(status().isOk());
 
         String contentAsString = resultActions.andReturn().getResponse().getContentAsString();
-        ShipInfoTest actual = mapper
-                .readValue(contentAsString, ShipInfoTest.class);
+        ShipInfoTest actual = mapper.readValue(contentAsString, ShipInfoTest.class);
         assertTrue("Возвращается не правильный результат при запросе создания корабля с параметром isUsed.", actual.equals(expected));
     }
 

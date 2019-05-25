@@ -194,7 +194,7 @@ public class UpdateShipTest {
     @Test
     public void updateShipWithDataTest2() throws Exception {
         ShipInfoTest shipInfoTest = testsHelper.getShipInfosById(32);
-//
+
         String newPlanet = "TestName";
         ShipType newShipType = ShipType.MILITARY;
         long newProdDate = 32556844329665L;

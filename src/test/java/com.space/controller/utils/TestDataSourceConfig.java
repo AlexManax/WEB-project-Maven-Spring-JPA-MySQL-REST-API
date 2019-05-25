@@ -1,6 +1,5 @@
 package com.space.controller.utils;
 
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -41,11 +40,12 @@ public class TestDataSourceConfig {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/test?serverTimezone=UTC");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/test?serverTimezone=PST");
         dataSource.setUsername("root");
         dataSource.setPassword("root1234");
         return dataSource;
     }
+
 
     @Bean
     public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
