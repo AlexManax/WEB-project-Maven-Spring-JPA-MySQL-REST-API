@@ -406,7 +406,7 @@ ship.setRating(ship.generateRating());
             }
             if (dateAfter != null) {
                 if (!isFirstParam) startStatment += " AND ";
-                startStatment += "prodDate >= '" + new SimpleDateFormat("yyyy").format(new Date(Long.parseLong(dateAfter))) + "-01-01'";
+                startStatment += "prodDate > '" + new SimpleDateFormat("yyyy").format(new Date(Long.parseLong(dateAfter))) + "-01-01'";
                 isFirstParam = false;
             }
             if (dateBefore != null) {
