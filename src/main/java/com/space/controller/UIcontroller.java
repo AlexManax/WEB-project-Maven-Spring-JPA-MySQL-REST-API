@@ -346,12 +346,16 @@ public class UIcontroller {
 
         );
 
-ship.setId(41L);
+//ship.setId(41L);
 ship.setRating(ship.generateRating());
 //        System.out.println(query);
 
         dbConnection.executeQuery(query);
-
+ship.setId(dbConnection.getShipsFromDB(//"SELECT * FROM ship  WHERE prodDate >= '2995-01-01' AND prodDate <= '3008-12-31' AND crewSize >= '20' AND crewSize <= '1500' ORDER BY id LIMIT 3 OFFSET 3");
+        getQueryStatement("0", "1", "id", ship.getName(), ship.getPlanet(), ship.getShipType(),
+                ship.getProdDate().getTime()+"", ship.getProdDate().getTime()+"",
+                ship.getUsed().toString(), ship.getSpeed().toString(), ship.getSpeed().toString(), ship.getCrewSize().toString(),
+                ship.getCrewSize().toString(), ship.getRating().toString(), ship.getRating().toString())).get(0).getId());
 //        System.out.println("Ship created" + ship);
 //
 //        System.out.println("Ship from DB : " + dbConnection.getByID(41).getProdDate().getTime());
