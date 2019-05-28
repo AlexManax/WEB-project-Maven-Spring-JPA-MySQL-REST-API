@@ -1,0 +1,13 @@
+/Users/alexp/Desktop/My Pprojects/testTaskv2/src/main/java/com/space/config/MyWebAppInit.java
+/Users/alexp/Desktop/My Pprojects/testTaskv2/src/main/java/com/space/service/DbConnection.java
+/Users/alexp/Desktop/My Pprojects/testTaskv2/src/main/java/com/space/config/WebConfig.java
+/Users/alexp/Desktop/My Pprojects/testTaskv2/src/main/java/com/space/controller/UIcontroller.java
+/Users/alexp/Desktop/My Pprojects/testTaskv2/src/main/java/com/space/controller/ShipOrder.java
+/Users/alexp/Desktop/My Pprojects/testTaskv2/src/main/java/com/space/model/ShipForUI.java
+/Users/alexp/Desktop/My Pprojects/testTaskv2/src/main/java/com/space/model/ShipType.java
+/Users/alexp/Desktop/My Pprojects/testTaskv2/src/main/java/com/space/TestEntity/ShipEntity.java
+/Users/alexp/Desktop/My Pprojects/testTaskv2/src/main/java/com/space/config/AppConfig.java
+/Users/alexp/Desktop/My Pprojects/testTaskv2/src/main/java/com/space/model/Ship.java
+/Users/alexp/Desktop/My Pprojects/testTaskv2/src/main/java/com/space/repository/ShipRepository.java
+/Users/alexp/Desktop/My Pprojects/testTaskv2/src/main/java/com/space/service/ShipService.java
+/Users/alexp/Desktop/My Pprojects/testTaskv2/src/main/java/com/space/service/impl/ShipServiceImpl.java
